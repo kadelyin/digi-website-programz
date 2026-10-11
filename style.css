@@ -457,13 +457,15 @@ body {
 
 /* \ FOOTER // */
 #siteFooter {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
   padding: 20px;
   background-color: var(--blue-dark);
   text-align: center;
 }
-
 #siteFooter p {
   margin: 0;
   font-family: "Basic", sans-serif;
