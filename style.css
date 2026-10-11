@@ -412,6 +412,16 @@ body {
 /* \ end sect // */
 
 /* \ KEYFRAMES // */
+@keyframes opacityOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
 @keyframes yIn {
   0% {
     opacity: 0;
@@ -421,16 +431,6 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes opacityOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.1;
   }
 }
 
@@ -452,6 +452,23 @@ body {
   100% {
     opacity: 1;
   }
+}
+/* \ end sect // */
+
+/* \ FOOTER // */
+#siteFooter {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  background-color: var(--blue-dark);
+  text-align: center;
+}
+
+#siteFooter p {
+  margin: 0;
+  font-family: "Basic", sans-serif;
+  font-size: 1rem;
+  color: var(--green);
 }
 /* \ end sect // */
 

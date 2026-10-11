@@ -5,17 +5,34 @@ function debugPrint(string) {
   if (debugEnabled == true) console.log(string);
 }
 
-const totalPhotos = 78;
 const bibliography = [];
 const isGallery = document.body.dataset.page === "gallery";
 const photoFolder = isGallery ? "gallery" : "bibliography";
+
+// bibliography has 44 photos, gallery has 78
+const totalPhotos = isGallery ? 78 : 44;
+
+// descriptive alt text: photo number -> one-sentence description
+// anything not filled in falls back to a basic description
+const altText = {
+  gallery: {
+    // 1: "Describe what is in photo 1 here",
+    // 2: "Describe what is in photo 2 here",
+  },
+  bibliography: {
+    // 1: "Describe what is in photo 1 here",
+  },
+};
 
 for (let i = 1; i <= totalPhotos; i++) {
   bibliography.push({
     title: `Photo ${i}`,
     year: 2026,
     desc: `Description ${i}`,
-    img: `../photos/${photoFolder}/photo${i}.png`,
+    alt:
+      altText[photoFolder][i] ||
+      `Photograph ${i} from the ${photoFolder} collection`,
+    img: `../photos/${photoFolder}/photo${i}.jpg`,
   });
 }
 
@@ -35,8 +52,8 @@ function renderBibliography() {
       <div class="item" style="animation-delay: ${delay}; animation-play-state: paused;">
         <img
           src="${item.img}"
-          alt="${item.title}"
-          onerror="if(this.src.endsWith('.png')) this.src=this.src.replace('.png', '.jpg');"
+          alt="${item.alt}"
+          loading="lazy"
         >
         <h3>${item.title} (${item.year})</h3>
         <p>${item.desc}</p>
