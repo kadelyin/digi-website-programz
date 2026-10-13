@@ -5,6 +5,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
 }
 /* \ end sect // */
 
@@ -60,9 +62,15 @@ body {
   outline-offset: 4px;
 }
 
+/* bigger banner on the index page only */
+body[data-page="index"] #bannerContainer {
+  width: 20vw;
+  left: 5px;
+}
+
 #banner {
   width: 100%;
-  aspect-ratio: 156 / 53;
+  aspect-ratio: 190 / 53;
   background-image: url("assets/banner-invert.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -141,6 +149,10 @@ body {
   transition: transform 0.2s ease;
   animation: yIn 2s ease-out forwards;
   animation-play-state: paused;
+}
+
+body[data-page="index"] #navButton {
+  max-width: 100px;
 }
 
 #navButton:hover {
@@ -355,7 +367,6 @@ body {
 }
 
 .item p {
-  text-transform: uppercase;
   font-family: "Basic", sans-serif;
   font-weight: 600;
   font-size: 1rem;
@@ -411,6 +422,35 @@ body {
 }
 /* \ end sect // */
 
+/* \ FOOTER // */
+#siteFooter {
+  position: relative;
+  margin-top: auto;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#siteFooter p {
+  text-transform: uppercase;
+  font-family: "Basic", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--green);
+  margin: 0;
+}
+/* \ end sect // */
+
+/* \ DESCRIPTIVE PAGES // */
+body[data-page="bio"] .item,
+body[data-page="contact"] .item,
+body[data-page="about"] .item {
+  max-width: 70vw;
+  margin: 0 auto;
+}
+/* \ end sect // */
+
 /* \ KEYFRAMES // */
 @keyframes opacityOut {
   0% {
@@ -452,25 +492,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-/* \ end sect // */
-
-/* \ FOOTER // */
-#siteFooter {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-  padding: 20px;
-  background-color: var(--blue-dark);
-  text-align: center;
-}
-#siteFooter p {
-  margin: 0;
-  font-family: "Basic", sans-serif;
-  font-size: 1rem;
-  color: var(--green);
 }
 /* \ end sect // */
 

@@ -2,23 +2,16 @@
 <html lang="en">
   <head>
     <!-- fonts -->
-    <!-- archivoblack -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
       rel="stylesheet"
     />
-    <!-- basic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Basic&display=swap"
       rel="stylesheet"
     />
-    <!-- poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -27,7 +20,7 @@
     <!-- metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kwp | bibliography</title>
+    <title>kwp | bio</title>
 
     <!-- styles -->
     <link rel="stylesheet" href="../style.css" />
@@ -35,16 +28,19 @@
     <!-- scripts -->
     <script src="../script.js" defer></script>
   </head>
-  <body data-page="bibliography">
-    <div id="topAnimation"></div>
-    <div id="openingAnimation"></div>
 
-    <!-- header banner -->
-    <a id="bannerContainer" href="index.html">
+  <body data-page="bio">
+    <div id="topAnimation" aria-hidden="true"></div>
+
+    <a
+      id="bannerContainer"
+      href="index.html"
+      title="Return to the home page"
+      aria-label="kwp home"
+    >
       <header id="banner"></header>
     </a>
 
-    <!-- navigation -->
     <button
       id="navButton"
       aria-label="Open navigation menu"
@@ -52,33 +48,42 @@
       aria-controls="navSection"
       aria-expanded="false"
     ></button>
+
     <nav id="navSection" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">HOME</a></li>
-        <li>
-          <a href="bibliography.html" class="current" aria-current="page"
-            >BIBLIOGRAPHY</a
-          >
-        </li>
+        <li><a href="bio.html">BIO</a></li>
         <li><a href="gallery.html">GALLERY</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li class="bottom-group">
-          <a href="about.html" class="bottomNav">ABOUT</a>
+          <a href="about.html" class="bottomNav current" aria-current="page"
+            >ABOUT</a
+          >
           <a href="index.html" class="bottomNav">SITE POLICY</a>
         </li>
       </ul>
     </nav>
 
-    <!-- main content -->
-    <section id="photoSect">
-      <h1 id="page-title">BIBLIOGRAPHY</h1>
-      <div class="grid"></div>
-    </section>
+    <section class="pageSect">
+      <div class="item">
+        <h1 id="page-title">ABOUT</h1>
 
-    <!-- image preview -->
-    <div id="imagePreview">
-      <img id="imagePreviewImg" src="" alt="" />
-    </div>
+        <h3 style="font-size: 2.5rem">Lorem Ipsum</h3>
+        <p style="font-size: 1.5rem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus
+          lorem quis sem ullamcorper faucibus. Sed bibendum non arcu in
+          facilisis. Curabitur id aliquam augue, aenean et magna vitae nisi
+          pretium viverra.
+        </p>
+
+        <h3 style="font-size: 2.5rem">Lorem Ipsum</h3>
+        <p style="font-size: 1.5rem">
+          Mauris vestibulum gravida vestibulum. Cras egestas elit id tincidunt
+          cursus. Integer pulvinar vel justo ac eleifend. Fusce semper mattis
+          massa, scelerisque dapibus erat fermentum non.
+        </p>
+      </div>
+    </section>
 
     <footer id="siteFooter">
       <p>

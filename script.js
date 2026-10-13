@@ -5,12 +5,11 @@ function debugPrint(string) {
   if (debugEnabled == true) console.log(string);
 }
 
-const bibliography = [];
-const isGallery = document.body.dataset.page === "gallery";
-const photoFolder = isGallery ? "gallery" : "bibliography";
+const gallery = [];
+const photoFolder = "gallery";
 
-// bibliography has 44 photos, gallery has 78
-const totalPhotos = isGallery ? 78 : 44;
+// gallery has 78 photos
+const totalPhotos = 78;
 
 // alt text: photo number -> placeholder label
 // paste this over the existing altText object in script.js
@@ -95,56 +94,10 @@ const altText = {
     77: "Photo 77 Gallery",
     78: "Photo 78 Gallery",
   },
-  bibliography: {
-    1: "Photo 1 Bibliography",
-    2: "Photo 2 Bibliography",
-    3: "Photo 3 Bibliography",
-    4: "Photo 4 Bibliography",
-    5: "Photo 5 Bibliography",
-    6: "Photo 6 Bibliography",
-    7: "Photo 7 Bibliography",
-    8: "Photo 8 Bibliography",
-    9: "Photo 9 Bibliography",
-    10: "Photo 10 Bibliography",
-    11: "Photo 11 Bibliography",
-    12: "Photo 12 Bibliography",
-    13: "Photo 13 Bibliography",
-    14: "Photo 14 Bibliography",
-    15: "Photo 15 Bibliography",
-    16: "Photo 16 Bibliography",
-    17: "Photo 17 Bibliography",
-    18: "Photo 18 Bibliography",
-    19: "Photo 19 Bibliography",
-    20: "Photo 20 Bibliography",
-    21: "Photo 21 Bibliography",
-    22: "Photo 22 Bibliography",
-    23: "Photo 23 Bibliography",
-    24: "Photo 24 Bibliography",
-    25: "Photo 25 Bibliography",
-    26: "Photo 26 Bibliography",
-    27: "Photo 27 Bibliography",
-    28: "Photo 28 Bibliography",
-    29: "Photo 29 Bibliography",
-    30: "Photo 30 Bibliography",
-    31: "Photo 31 Bibliography",
-    32: "Photo 32 Bibliography",
-    33: "Photo 33 Bibliography",
-    34: "Photo 34 Bibliography",
-    35: "Photo 35 Bibliography",
-    36: "Photo 36 Bibliography",
-    37: "Photo 37 Bibliography",
-    38: "Photo 38 Bibliography",
-    39: "Photo 39 Bibliography",
-    40: "Photo 40 Bibliography",
-    41: "Photo 41 Bibliography",
-    42: "Photo 42 Bibliography",
-    43: "Photo 43 Bibliography",
-    44: "Photo 44 Bibliography",
-  },
 };
 
 for (let i = 1; i <= totalPhotos; i++) {
-  bibliography.push({
+  gallery.push({
     title: `Photo ${i}`,
     year: 2026,
     desc: `Description ${i}`,
@@ -155,16 +108,16 @@ for (let i = 1; i <= totalPhotos; i++) {
   });
 }
 
-function renderBibliography() {
+function renderGallery() {
   const container = document.querySelector(".grid");
   if (!container) return;
 
-  debugPrint("renderBibliography fired");
+  debugPrint("renderGallery fired");
 
   let htmlContent = "";
 
-  for (let i = 0; i < bibliography.length; i++) {
-    const item = bibliography[i];
+  for (let i = 0; i < gallery.length; i++) {
+    const item = gallery[i];
     const delay = (i * 0.1).toFixed(2) + "s";
 
     htmlContent += `
@@ -174,8 +127,6 @@ function renderBibliography() {
           alt="${item.alt}"
           loading="lazy"
         >
-        <h3>${item.title} (${item.year})</h3>
-        <p>${item.desc}</p>
       </div>
     `;
   }
@@ -186,7 +137,7 @@ function renderBibliography() {
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 
-  renderBibliography();
+  renderGallery();
   startSiteAnimations();
 });
 
@@ -202,12 +153,12 @@ function startSiteAnimations() {
     item.style.animationPlayState = "running";
   });
 
+  if (pageTitle) {
+    pageTitle.style.animationPlayState = "running";
+  }
+
   if (openingAnimation) {
     openingAnimation.style.animationPlayState = "running";
-
-    if (pageTitle) {
-      pageTitle.style.animationPlayState = "running";
-    }
 
     const page = document.body.dataset.page;
 
