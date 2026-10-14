@@ -9,7 +9,7 @@ const gallery = [];
 const photoFolder = "gallery";
 
 // gallery has 78 photos
-const totalPhotos = 78;
+const totalPhotos = 66;
 
 // alt text: photo number -> placeholder label
 // paste this over the existing altText object in script.js
@@ -81,18 +81,6 @@ const altText = {
     64: "Photo 64 Gallery",
     65: "Photo 65 Gallery",
     66: "Photo 66 Gallery",
-    67: "Photo 67 Gallery",
-    68: "Photo 68 Gallery",
-    69: "Photo 69 Gallery",
-    70: "Photo 70 Gallery",
-    71: "Photo 71 Gallery",
-    72: "Photo 72 Gallery",
-    73: "Photo 73 Gallery",
-    74: "Photo 74 Gallery",
-    75: "Photo 75 Gallery",
-    76: "Photo 76 Gallery",
-    77: "Photo 77 Gallery",
-    78: "Photo 78 Gallery",
   },
 };
 
