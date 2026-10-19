@@ -9,7 +9,7 @@ const gallery = [];
 const photoFolder = "gallery";
 
 // gallery has 78 photos
-const totalPhotos = 66;
+const totalPhotos = 65;
 
 // alt text: photo number -> placeholder label
 // paste this over the existing altText object in script.js
@@ -80,7 +80,6 @@ const altText = {
     63: "Photo 63 Gallery",
     64: "Photo 64 Gallery",
     65: "Photo 65 Gallery",
-    66: "Photo 66 Gallery",
   },
 };
 

@@ -19,7 +19,7 @@ body {
   --tile-size: -220px;
   --header-h: 120px;   /* height of #topAnimation */
   --nav-size: 60px;    /* menu button size */
-  --banner-w: 250px;   /* banner width */
+  --banner-w: 210px;   /* banner width */
   --banner-h: calc(var(--banner-w) * 53 / 190);
 }
 
@@ -47,9 +47,9 @@ body {
 #bannerContainer {
   position: fixed;
   top: 5px;
-  left: 30px;
+  left: 60px;
   margin: 10px;
-  width: 250px;
+  width: 200px;
   z-index: 6;
   border-radius: 6px;
   display: block;
@@ -57,7 +57,7 @@ body {
 
 #bannerContainer:hover {
   background-color: var(--pink);
-  outline: 8px solid var(--pink);
+  outline: 16px solid var(--pink);
 }
 
 #bannerContainer:focus-visible {
@@ -142,7 +142,7 @@ body[data-page="index"] #bannerContainer {
 #navButton {
   position: fixed;
   top: 5px;
-  right: 30px;
+  right: 60px;
   margin: 10px;
   z-index: 6;
   aspect-ratio: 59 / 59;
@@ -155,7 +155,7 @@ body[data-page="index"] #bannerContainer {
   border-radius: 6px;
 
   background-color: transparent;
-  background-image: url("assets/menu-invert.png");
+  background-image: url("assets/menu_invert.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -309,7 +309,7 @@ body[data-page="index"] #navButton {
   z-index: 1;
   width: 100%;
   min-height: 100vh;
-  padding: 20px 20px 120px;
+  padding: 120px 20px 120px;
   background-color: #ffffff;
   margin-top: 0;
   box-sizing: border-box;
@@ -320,7 +320,7 @@ body[data-page="index"] #navButton {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
   width: 100%;
-  margin: 0;
+  margin-top: 80px;
   margin-right: auto;
   align-items: start;
 }
@@ -437,7 +437,7 @@ body[data-page="index"] #navButton {
   z-index: 1;
   width: 100%;
   min-height: 100vh;
-  padding: 20px 20px 120px;
+  padding: 120px 20px 120px;
   background-color: #ffffff;
   box-sizing: border-box;
 }
@@ -532,7 +532,7 @@ body[data-page="gallery"] .grid {
 
   #photoSect,
   .pageSect {
-    padding: 16px 18px 100px;
+    padding: 120px 18px 120px;
   }
 }
 
