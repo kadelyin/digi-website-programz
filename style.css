@@ -17,6 +17,10 @@ body {
   --pink: #f0006c;
   --green: #00f084;
   --tile-size: -220px;
+  --header-h: 120px;   /* height of #topAnimation */
+  --nav-size: 60px;    /* menu button size */
+  --banner-w: 250px;   /* banner width */
+  --banner-h: calc(var(--banner-w) * 53 / 190);
 }
 
 .archivo-black {
@@ -43,9 +47,9 @@ body {
 #bannerContainer {
   position: fixed;
   top: 5px;
-  left: 5px;
+  left: 30px;
   margin: 10px;
-  width: 156px;
+  width: 250px;
   z-index: 6;
   border-radius: 6px;
   display: block;
@@ -53,13 +57,24 @@ body {
 
 #bannerContainer:hover {
   background-color: var(--pink);
-  outline: 5px solid var(--pink);
+  outline: 8px solid var(--pink);
 }
 
 #bannerContainer:focus-visible {
   background-color: var(--pink);
   outline: 5px solid var(--green);
   outline-offset: 4px;
+}
+
+/* centre banner and nav button vertically in the header strip */
+body:not([data-page="index"]) #bannerContainer {
+  margin: 0;
+  top: calc((var(--header-h) - var(--banner-h)) / 2);
+}
+
+body:not([data-page="index"]) #navButton {
+  margin: 0;
+  top: calc((var(--header-h) - var(--nav-size)) / 2);
 }
 
 /* bigger banner on the index page only */
@@ -108,7 +123,7 @@ body[data-page="index"] #bannerContainer {
   position: sticky;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: var(--header-h);
   z-index: 4;
   opacity: 1;
   background-image: url("assets/topTile.png");
@@ -127,13 +142,13 @@ body[data-page="index"] #bannerContainer {
 #navButton {
   position: fixed;
   top: 5px;
-  right: 5px;
+  right: 30px;
   margin: 10px;
   z-index: 6;
   aspect-ratio: 59 / 59;
   width: 100%;
   height: auto;
-  max-width: 44px;
+  max-width: var(--nav-size);
 
   padding: 0;
   border: none;
@@ -157,6 +172,7 @@ body[data-page="index"] #navButton {
 
 #navButton:hover {
   background-color: var(--pink);
+  outline: 4px solid var(--pink);
 }
 
 #navButton:focus-visible {
@@ -213,10 +229,12 @@ body[data-page="index"] #navButton {
 #navSection ul li a {
   text-decoration: none;
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-size: clamp(2.5rem, 9vw, 4.25rem);
   color: var(--green);
   display: block;
   width: 100%;
+  padding: 14px 24px;
+  box-sizing: border-box;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -238,16 +256,14 @@ body[data-page="index"] #navButton {
 }
 
 #navSection ul li a.current {
-  text-decoration: underline solid var(--green) 5px;
-  text-underline-offset: 10px;
+  background-color: var(--green);
+  color: var(--blue-dark);
 }
 
-#navSection ul li a.current:hover {
-  text-decoration: underline solid var(--pink) 5px;
-}
-
+#navSection ul li a.current:hover,
 #navSection ul li a.current:focus-visible {
-  text-decoration: underline solid var(--pink) 5px;
+  color: var(--pink);
+  background-color: var(--green);
 }
 
 #navSection ul li.bottom-group {
@@ -269,6 +285,11 @@ body[data-page="index"] #navButton {
   padding: 5px 10px;
 }
 
+#navSection ul li a.bottomNav.current {
+  background-color: var(--green);
+  color: var(--blue-dark);
+}
+
 #navSection ul li a.bottomNav:hover {
   color: var(--pink);
   background-color: var(--green);
@@ -288,7 +309,7 @@ body[data-page="index"] #navButton {
   z-index: 1;
   width: 100%;
   min-height: 100vh;
-  padding: 10px 20px;
+  padding: 20px 20px 120px;
   background-color: #ffffff;
   margin-top: 0;
   box-sizing: border-box;
@@ -362,7 +383,7 @@ body[data-page="index"] #navButton {
   font-weight: 800;
   font-size: 1.3rem;
   letter-spacing: -1px;
-  margin: 0;
+  margin: 2.5rem 0 0.75rem;
   color: var(--blue);
 }
 
@@ -371,7 +392,7 @@ body[data-page="index"] #navButton {
   font-weight: 600;
   font-size: 1rem;
   color: color-mix(var(--blue) 90%, transparent);
-  margin: 0;
+  margin: 0 0 1.25rem;
 }
 /* \ end sect // */
 
@@ -405,7 +426,7 @@ body[data-page="index"] #navButton {
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 0 100px var(--blue-dark);
+  box-shadow: 0 0 100px #1a1a1a;
   user-select: none;
 }
 /* \ end sect // */
@@ -416,7 +437,7 @@ body[data-page="index"] #navButton {
   z-index: 1;
   width: 100%;
   min-height: 100vh;
-  padding: 10px 20px;
+  padding: 20px 20px 120px;
   background-color: #ffffff;
   box-sizing: border-box;
 }
@@ -448,6 +469,13 @@ body[data-page="contact"] .item,
 body[data-page="about"] .item {
   max-width: 70vw;
   margin: 0 auto;
+}
+
+body[data-page="gallery"] #page-title,
+body[data-page="gallery"] .grid {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* \ end sect // */
 
@@ -502,8 +530,9 @@ body[data-page="about"] .item {
     gap: 24px;
   }
 
-  #photoSect {
-    padding: 28px 18px;
+  #photoSect,
+  .pageSect {
+    padding: 16px 18px 100px;
   }
 }
 
@@ -514,11 +543,16 @@ body[data-page="about"] .item {
   }
 
   #bannerContainer {
-    width: 120px;
+    width: var(--banner-w);
+  }
+  
+  #navButton {
+    max-width: var(--nav-size);
   }
 
-  #navButton {
-    max-width: 40px;
+  :root {
+    --banner-w: 120px;
+    --nav-size: 48px;
   }
 
   #photoSect,
