@@ -16,7 +16,7 @@ body {
   --blue-dark: #0554b4;
   --pink: #f0006c;
   --green: #00f084;
-  --tile-size: -220px;
+  --tile-size: 220px;
   --header-h: 120px; /* height of #topAnimation */
   --nav-size: 60px; /* menu button size */
   --banner-w: 210px; /* banner width */
@@ -503,11 +503,10 @@ body[data-page="gallery"] .grid {
 }
 
 @keyframes scrollAnim {
-  0% {
+  from {
     background-position: 0 0;
   }
-
-  100% {
+  to {
     background-position: var(--tile-size) var(--tile-size);
   }
 }
