@@ -17,9 +17,9 @@ body {
   --pink: #f0006c;
   --green: #00f084;
   --tile-size: -220px;
-  --header-h: 120px;   /* height of #topAnimation */
-  --nav-size: 60px;    /* menu button size */
-  --banner-w: 210px;   /* banner width */
+  --header-h: 120px; /* height of #topAnimation */
+  --nav-size: 60px; /* menu button size */
+  --banner-w: 210px; /* banner width */
   --banner-h: calc(var(--banner-w) * 53 / 190);
 }
 
@@ -80,7 +80,7 @@ body:not([data-page="index"]) #navButton {
 /* bigger banner on the index page only */
 body[data-page="index"] #bannerContainer {
   width: 20vw;
-  left: 5px;
+  top: 15px;
 }
 
 #banner {
@@ -545,7 +545,7 @@ body[data-page="gallery"] .grid {
   #bannerContainer {
     width: var(--banner-w);
   }
-  
+
   #navButton {
     max-width: var(--nav-size);
   }
