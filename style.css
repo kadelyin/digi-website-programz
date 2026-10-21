@@ -387,6 +387,16 @@ body[data-page="index"] #navButton {
   color: var(--blue);
 }
 
+.item h2 {
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--blue);
+}
+
 .item p {
   font-family: "Basic", sans-serif;
   font-weight: 600;
@@ -453,7 +463,7 @@ body[data-page="index"] #navButton {
   box-sizing: border-box;
 }
 
-#siteFooter p {
+#siteFooter h2 {
   text-transform: uppercase;
   font-family: "Basic", sans-serif;
   font-weight: 400;
